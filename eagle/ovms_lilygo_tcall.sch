@@ -21918,7 +21918,7 @@ Source: coiltronics_dr_series.pdf</description>
 <part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="UD-8X10" package3d_urn="urn:adsk.eagle:package:23473/1" value="220u"/>
 <part name="SEL12V" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ2W" device="" package3d_urn="urn:adsk.eagle:package:15474/1"/>
 <part name="IC4" library="ovms_lilygo" deviceset="LMR516XX" device="" package3d_urn="urn:adsk.eagle:package:30993/1"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="22k"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="220k"/>
 <part name="L2" library="inductors" library_urn="urn:adsk.eagle:library:243" deviceset="DR74" device="" package3d_urn="urn:adsk.eagle:package:15122/1" value="33u"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100n"/>
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="22u"/>
@@ -21927,7 +21927,7 @@ Source: coiltronics_dr_series.pdf</description>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100k"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="20k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="47k"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="470k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
@@ -21952,8 +21952,19 @@ P9 - +12V
 
 
  </text>
-<text x="-180.34" y="-15.24" size="1.778" layer="97">EN threshold         11.5V
-DISABLE threshold  9V</text>
+<text x="-119.38" y="-38.1" size="1.778" layer="97">LMR51610 EN thresholds
+ON: 1.22V OFF 1.0V
+
+Choice of R3
+             Von        Voff
+180k       11.7V     11.4V
+220k       11.8V     11.4V
+270k       11.9V     11.5V
+300k       12.0V     11.6V
+
+Values depend on the actual 
+Zener voltage (nominal 10V) at 
+low current (2.8µA). </text>
 </plain>
 <instances>
 <instance part="LILYGO" gate="G$1" x="-50.8" y="109.22" smashed="yes" rot="R90">
