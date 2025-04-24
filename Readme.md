@@ -17,6 +17,8 @@ Communication with the car via CAN-bus requires
 - Physical layer(s) and CAN controller
 - 12V to 5V DC/DC converter and including filtering
 
+![OVMS module based on Lilygo T-Call](/images/ovms-liulygo-module_w_case_500px.jpg)
+
 Features of the motherboard
 ---------------------------
 The Lilygo T-Call is placed on a motherboard 
