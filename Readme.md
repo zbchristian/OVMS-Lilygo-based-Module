@@ -17,13 +17,26 @@ Communication with the car via CAN-bus requires
 - Physical layer(s) and CAN controller
 - 12V to 5V DC/DC converter and including filtering
 
+Hardware
+========
+The Lilygo board is placed onto a motherboard, either into a socket, or the pins can be directly soldered to the board. The motherboard provides the voltage for the Lilygo board and the DSub-9 connector to connect to the OBD-II.
+
+The image shows the module, the antennas and the 3D printed case. The motherboard slides into slots and the lid will hold it in place.
+The lid allows to store the GPS antenna, but allows to add SMA connectors for external antennas as well. The 4G antenna can be stored a 1mm high compartment inside the case.
+
 ![OVMS module based on Lilygo T-Call](/images/ovms-liulygo-module_w_case_500px.jpg)
+
+*The Lilygo based module and case. The GPS-antenna is placed into a corresponding slot in the lid of the case*
+
+The chosen orientation (Simcom 7670 on the top) of the Lilygo board allows for easy access to the antenna connectors. The ESP32 WROVER E is in this case located on the bottom side.  
 
 Features of the motherboard
 ---------------------------
 The Lilygo T-Call is placed on a motherboard 
 - size 49 x 98 mm²
-- Sub-D9 connector (pinout compatible standard OVMS module)
+- DSub-9 connector (pinout compatible standard OVMS module) to connect to the OBD-II
+- 12V car battery input from the OBD-II, or a separate power souce 
+- Fuse and filtering (common mode choke and capacitors) of the input voltage 
 - DC/DC converter to provide the Lilygo borad with 5V
     - Auto shutdown of converter at voltage below 11.7V to prevent the drainage of the battery
 - Two CAN busses are implemented
@@ -31,8 +44,16 @@ The Lilygo T-Call is placed on a motherboard
     - Second bus with an MCP2515 controller
     - Solder jumpers to enable 120 &Omega; bus termination resistors 
 - Voltage divider to measure the battery voltage (compatible with standard OVMS module)
+- The schematic and borad layout is provided for Autodesk Eagle
+- The Gerber and bill of material is provided for the board production at JLCPCB 
+- Nearly all components are placed on the bottom side of the PCB. This allows for an easy access, even when the Lilygo board is soldered to the motherboard
 - 3D printable case to house the motherboard as well as the antennas
     - includes space to utilize external antennas via SMA connectors
+
+![OVMS module based on Lilygo T-Call - Top side](/images/ovms-lilygo-module_top_500px.jpg)
+![OVMS module based on Lilygo T-Call - Bottom side](/images/ovms-lilygo-module_bottom_500px.jpg)
+
+*Top and bottom side of the module. Only a single CAN bus is assembled. The second physical layer and the MCP2515 is left empty.*
 
 Limitations
 -----------
@@ -41,10 +62,9 @@ Limitations
 
 Firmware
 --------
-The standard version of the OVMS repository contains already support for the 4G Simcom module. 
-Support for Lilygo Hardware has to be enabled before compiling the firmware.
+The standard version of the OVMS repository contains already support for the 4G Simcom module. The [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) contains the branch `Lilygo-support`. 
+- Follow the standard OVMS documentation to compile the firmware to clone the repo and install additional packages
+- In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.default.lilygo.hw10` to `sdkconfig` file and `support/partition4M.csv` to `partition4M.csv`
+- Follow the standard documentation to compile and flash the firmware via USB
 
-
-Possible Modifications
-----------------------
-The height of the case can be reduced, in case, that the Lilygo is not placed into a socket, but soldered directly onto the motherboard.
+Enjoy!
