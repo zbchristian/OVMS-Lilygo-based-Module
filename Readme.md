@@ -5,13 +5,13 @@ The Lilygo T-Call modules provide most of the hardware required for an OVMS modu
 - Simcom A7670E 4G modem with GPS 
 - Included antennas for 4G and GPS
 - USB-C port for programming and powering during testing
-- 5V Powering 
+- ext 5V powering possible via pin
 
 OVMS Requirements
 ----------------- 
 - Connection to OBD-II connector
-- Powering via 12V of OBD-II
-- OBD-II to sub-D9 cable 
+- Powering via 12V of the OBD-II connector
+- OBD-II to DSub-9 cable 
 
 Communication with the car via CAN-bus requires
 - Physical layer(s) and CAN controller
@@ -22,7 +22,7 @@ Hardware
 The Lilygo board is placed onto a motherboard, either into a socket, or the pins can be directly soldered to the board. The motherboard provides the voltage for the Lilygo board and the DSub-9 connector to connect to the OBD-II.
 
 The image shows the module, the antennas and the 3D printed case. The motherboard slides into slots and the lid will hold it in place.
-The lid allows to store the GPS antenna, but allows to add SMA connectors for external antennas as well. The 4G antenna can be stored a 1mm high compartment inside the case.
+The lid allows to store the GPS antenna, but allows to add SMA connectors for external antennas as well. The 4G antenna can be stored in a 1mm high compartment inside the case.
 
 ![OVMS module based on Lilygo T-Call](/images/ovms-liulygo-module_w_case_500px.jpg)
 
@@ -39,13 +39,13 @@ The Lilygo T-Call is placed on a motherboard
 - Fuse and filtering (common mode choke and capacitors) of the input voltage 
 - DC/DC converter to provide the Lilygo borad with 5V
     - Auto shutdown of converter at voltage below 11.7V to prevent the drainage of the battery
-- Two CAN busses are implemented
+- Two CAN busses are implemented (compatible with standard OVMS module)
     - ESP32 internal requires only a physical layer
     - Second bus with an MCP2515 controller
     - Solder jumpers to enable 120 &Omega; bus termination resistors 
 - Voltage divider to measure the battery voltage (compatible with standard OVMS module)
-- The schematic and borad layout is provided for Autodesk Eagle
-- The Gerber and bill of material is provided for the board production at JLCPCB 
+- The schematic and board layout is provided for Autodesk Eagle
+- The Gerber and bill of material is provided for the board production and assembly at JLCPCB 
 - Nearly all components are placed on the bottom side of the PCB. This allows for an easy access, even when the Lilygo board is soldered to the motherboard
 - 3D printable case to house the motherboard as well as the antennas
     - includes space to utilize external antennas via SMA connectors
