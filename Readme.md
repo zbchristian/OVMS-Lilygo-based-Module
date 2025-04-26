@@ -60,7 +60,7 @@ The Lilygo T-Call is placed on a motherboard
 Limitations
 -----------
 - The flash memory size of only 4MB Flash does no allow Over-the-Air updates of the firmware. So, each change requires access via the USB-C port 
-- Only two CAN busses limits the application to certain cars
+- Only two CAN buses
 - No GPIO extender
 - No SD-Card support
 
