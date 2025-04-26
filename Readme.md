@@ -50,7 +50,7 @@ The Lilygo T-Call is placed on a motherboard
 - The Gerber and bill of material is provided for the board production and assembly at JLCPCB 
 - Nearly all components are placed on the bottom side of the PCB. This allows for an easy access, even when the Lilygo board is soldered to the motherboard
 - 3D printable case to house the motherboard as well as the antennas
-    - includes space to utilize external antennas via SMA connectors
+    - sufficient space in the lid to add SMA connectors for external antennas
 
 ![OVMS module based on Lilygo T-Call - Top side](/images/ovms-lilygo-module_top_500px.jpg)
 ![OVMS module based on Lilygo T-Call - Bottom side](/images/ovms-lilygo-module_bottom_500px.jpg)
