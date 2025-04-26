@@ -6,6 +6,7 @@ The Lilygo T-Call modules provide most of the hardware required for an OVMS modu
 - Included antennas for 4G and GPS
 - USB-C port for programming and powering during testing
 - ext 5V powering possible via pin
+- Price is around 35€ + tax
 
 OVMS Requirements
 ----------------- 
@@ -58,7 +59,7 @@ The Lilygo T-Call is placed on a motherboard
 
 Limitations
 -----------
-- Only 4MB Flash does no allow Over-the-Air updates of the firmware.
+- Only 4MB Flash does no allow Over-the-Air updates of the firmware. So, each change requires access via the USB-C port 
 - Only two CAN busses limits the application to certain cars
 - No GPIO extender
 - No SD-Card support
