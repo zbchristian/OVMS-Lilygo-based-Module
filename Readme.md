@@ -55,7 +55,7 @@ The Lilygo T-Call is placed on a motherboard
 ![OVMS module based on Lilygo T-Call - Top side](/images/ovms-lilygo-module_top_500px.jpg)
 ![OVMS module based on Lilygo T-Call - Bottom side](/images/ovms-lilygo-module_bottom_500px.jpg)
 
-*Top and bottom side of the module. Only a single CAN bus is assembled. The second physical layer and the MCP2515 is left empty.*
+*Top and bottom side of the module. Only a single CAN bus is assembled. The second physical layer and the MCP2515 is left empty, because the module is used for a car with a single bus.*
 
 Limitations
 -----------
