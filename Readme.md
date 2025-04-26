@@ -38,7 +38,7 @@ The Lilygo T-Call is placed on a motherboard
 - DSub-9 connector (pinout compatible standard OVMS module) to connect to the OBD-II
 - 12V car battery input from the OBD-II, or a separate power souce 
 - Fuse and filtering (common mode choke and capacitors) of the input voltage 
-- DC/DC converter to provide the Lilygo borad with 5V
+- DC/DC converter to provide the Lilygo board with 5V
     - Auto shutdown of the DC/DC converter at a voltage below 11.7V to prevent the drainage of the battery
     - A voltage of more than 11.9V is required to switch on again
 - Two CAN busses are implemented
