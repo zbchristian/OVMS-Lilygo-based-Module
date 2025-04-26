@@ -1,5 +1,5 @@
-Open-Vehicle-Monitoring-System: Modules based on Lilygo T-Call A7670E V1.0
-==========================================================================
+Open-Vehicle-Monitoring-System: Module based on Lilygo T-Call A7670E V1.0
+=========================================================================
 The Lilygo T-Call modules provide most of the hardware required for an OVMS module:
 - ESP32-WROVER E with 4MB Flash and 8MB PSRAM
 - Simcom A7670E 4G modem with GPS 
