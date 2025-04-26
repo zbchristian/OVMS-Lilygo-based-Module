@@ -21876,8 +21876,8 @@ Source: coiltronics_dr_series.pdf</description>
 <attribute name="GND" value=""/>
 <attribute name="VIN" value="12V"/>
 </part>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="47k"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="470k"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100k"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100n"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
@@ -21910,7 +21910,7 @@ Source: coiltronics_dr_series.pdf</description>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u"/>
 <part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="1u"/>
-<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C3216" package3d_urn="urn:adsk.eagle:package:23628/2" value="22u"/>
+<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206K" package3d_urn="urn:adsk.eagle:package:23682/2" value="22u"/>
 <part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206K" package3d_urn="urn:adsk.eagle:package:23682/2" value="22u"/>
 <part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="2u2"/>
 <part name="OBD2" library="con-subd" library_urn="urn:adsk.eagle:library:189" deviceset="M09HP" device="" package3d_urn="urn:adsk.eagle:package:10236/1"/>
@@ -22119,7 +22119,7 @@ low current (2.8µA). </text>
 <attribute name="VALUE" x="-194.056" y="0.381" size="1.778" layer="96"/>
 </instance>
 <instance part="C14" gate="G$1" x="-147.32" y="7.62" smashed="yes" rot="R180">
-<attribute name="NAME" x="-148.844" y="7.239" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="-148.844" y="9.779" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-148.844" y="12.319" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C15" gate="G$1" x="-124.46" y="0" smashed="yes" rot="R180">
