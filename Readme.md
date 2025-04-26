@@ -69,7 +69,7 @@ Firmware
 Except for the above mentioned limitation, the module is compatible with the standard OVMS firmware, BUT the pinout requires a remapping of the ESP32 pins.
 This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `Lilygo-support`. 
 - Follow the standard OVMS documentation to clone the above repo, install additional packages and to install the required Espressif IDF
-- Switch to branch `Lilygo-support`
+- Switch to branch `lilygo-support`
 - In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.default.lilygo.hw10` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
 - Follow the standard documentation to compile and flash the firmware via USB
 
