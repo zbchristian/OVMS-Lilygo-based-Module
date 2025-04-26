@@ -59,6 +59,7 @@ Limitations
 -----------
 - Only 4MB Flash does no allow Over-the-Air updates of the firmware.
 - Only two CAN busses limits the application to certain cars
+- No SD-Card support
 
 Firmware
 --------
