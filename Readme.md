@@ -22,7 +22,7 @@ Hardware
 ========
 The Lilygo board is placed onto a motherboard, either into a socket, or the pins can be directly soldered to the board. The motherboard provides the voltage for the Lilygo board and the DSub-9 connector to connect to the OBD-II.
 
-The image shows the module, the antennas and the 3D printed case (Step files availybe in the `CAD` folder). The motherboard slides into slots and the lid will hold it in place.
+The image shows the module, the antennas and the 3D printed case (Freecad and Step files availybe in the `CAD` folder). The motherboard slides into slots and the lid will hold it in place.
 The lid allows to store the GPS antenna, but allows to add SMA connectors for external antennas as well. The 4G antenna can be stored in a 1mm high compartment inside the case.
 
 ![OVMS module based on Lilygo T-Call](/images/ovms-liulygo-module_w_case_500px.jpg)
