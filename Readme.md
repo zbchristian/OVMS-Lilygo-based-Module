@@ -59,7 +59,7 @@ The Lilygo T-Call is placed on a motherboard
 
 Limitations
 -----------
-- Only 4MB Flash does no allow Over-the-Air updates of the firmware. So, each change requires access via the USB-C port 
+- The flash memory size of only 4MB Flash does no allow Over-the-Air updates of the firmware. So, each change requires access via the USB-C port 
 - Only two CAN busses limits the application to certain cars
 - No GPIO extender
 - No SD-Card support
@@ -67,8 +67,8 @@ Limitations
 Firmware
 --------
 Except for the above mentioned limitation, the module is compatible with the standard OVMS firmware, BUT the pinout requires a remapping of the ESP32 pins.
-This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `Lilygo-support`. 
-- Follow the standard OVMS documentation to clone the above repo, install additional packages and to install the required Espressif IDF
+This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `lilygo-support`. 
+- Follow the standard OVMS documentation to clone the above repository, install the required additional packages and install the required Espressif IDF
 - Switch to branch `lilygo-support`
 - In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.default.lilygo.hw10` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
 - Follow the standard documentation to compile and flash the firmware via USB
