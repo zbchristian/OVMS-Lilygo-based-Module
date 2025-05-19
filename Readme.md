@@ -73,6 +73,7 @@ This is implemented in the [forked OVMS repository](https://github.com/zbchristi
 - Switch to branch `lilygo-GPIO-remapping`
 - In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.lilygo_tc` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
 - Run `make menuconfig` and select in the OVMS submenu the hardware version 3.1 and in the GPIO remapping menu, the T-Call board version.
+- Be sure, that the following OVMS components are disabled: MAX7317, external SWCAN, Over-The-Air update, SD card
 This remaps the ESP32 GPIO according to the version.  
 - Follow the standard documentation to compile and flash the firmware via USB
 
