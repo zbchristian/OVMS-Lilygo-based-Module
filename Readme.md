@@ -77,9 +77,9 @@ This remaps the ESP32 GPIO according to the version.
 - Follow the standard documentation to compile and flash the firmware via USB
 
 Known Issues
-============
+------------
 - An outdated firmware version of the Simcom A7670E can cause connection problems. The firmware can be updated according to the
 [Modem Firmware Update Guide](https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/blob/main/docs/update_fw.md). 
-This requires to solder an USB cable to the corresponding pins on the Lilygo board (right hand side below the Simcom modem).
+This requires to solder an USB cable to the corresponding pins on the Lilygo board (see [here](https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/issues/180)).
 
 Enjoy!
