@@ -1,5 +1,5 @@
-Open-Vehicle-Monitoring-System: Module based on Lilygo T-Call A7670E V1.0
-=========================================================================
+Open-Vehicle-Monitoring-System: Module based on Lilygo T-Call A7670E V1.0/V1.1
+==============================================================================
 The Lilygo T-Call modules provide most of the hardware required for an OVMS module:
 - ESP32-WROVER E with 4MB Flash and 8MB PSRAM
 - Simcom A7670E 4G modem with GPS 
@@ -21,6 +21,7 @@ Communication with the car via CAN-bus requires
 Hardware
 ========
 The Lilygo board is placed onto a motherboard, either into a socket, or the pins can be directly soldered to the board. The motherboard provides the voltage for the Lilygo board and the DSub-9 connector to connect to the OBD-II.
+The board revision B is suitable for the T-Call version 1.0 and 1.1 (different GPIO mapping).
 
 The image shows the module, the antennas and the 3D printed case (Freecad and Step files availybe in the `CAD` folder). The motherboard slides into slots and the lid will hold it in place.
 The lid allows to store the GPS antenna, but allows to add SMA connectors for external antennas as well. The 4G antenna can be stored in a 1mm high compartment inside the case.
@@ -67,10 +68,12 @@ Limitations
 Firmware
 --------
 Except for the above mentioned limitation, the module is compatible with the standard OVMS firmware, BUT the pinout requires a remapping of the ESP32 pins.
-This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `lilygo-support`. 
+This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `lilygo-GPIO-remapping`. 
 - Follow the standard OVMS documentation to clone the above repository, install the required additional packages and install the required Espressif IDF
-- Switch to branch `lilygo-support`
-- In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.default.lilygo.hw10` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
+- Switch to branch `lilygo-GPIO-remapping`
+- In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.lilygo_tc` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
+- Run `make menuconfig` and select in the OVMS submenu the hardware version 3.1 and in the GPIO remapping menu, the T-Call board version.
+This remaps the ESP32 GPIO according to the version.  
 - Follow the standard documentation to compile and flash the firmware via USB
 
 Enjoy!
