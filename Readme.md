@@ -65,6 +65,20 @@ Limitations
 - No GPIO extender
 - No SD-Card support
 
+Assembly related hints
+----------------------
+The Lilygo module can in principle be soldered by using the provided pin headers. The board has to be mounted with the Simcom modem on the top side.
+Using a precision socket and corresponding pin headers, the module can easliy be removed again, but should be secured by non conducting screws.
+ 
+The DC-DC converter output voltage is defined by R8 and R9. The reference voltage is 0.8V, so with R8=100k and R9=18k, the output voltage is about 5.2V.
+The Schottky diode reduces this by about 0.4V, hence the Lilygo module is powered by 4.8V. The diode is necessary to allow to provide power via the USB-C 
+port at the same time, i.e. when flashing a new firmware. 
+
+The DC-DC converter exhibits an enable input, which requires a minimum voltage to power on of 1.2V and to power off of 1.0V. The enable voltage is derived from the 
+input voltage by means of the Zener diode Z1 and the voltage divider R3/R11. For a Zener voltage of 10V, the default values R3=100k and R11=220k lead to 
+a minimal power on voltage of 11.8V and a maximal power off voltage of 11.5V. In case a different Zener voltage is used, the divider has to be adjusted accordingly. 
+ 
+
 Firmware
 --------
 Except for the above mentioned limitation, the module is compatible with the standard OVMS firmware, BUT the pinout requires a remapping of the ESP32 pins.
@@ -81,5 +95,10 @@ Known Issues
 - An outdated firmware version of the Simcom A7670E can cause connection problems. The firmware can be updated according to the
 [Modem Firmware Update Guide](https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/blob/main/docs/update_fw.md). 
 This requires to solder an USB cable to the corresponding pins on the Lilygo board (see [here](https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/issues/180)).
+
+Disclaimer
+==========
+This design is provided as is. Use at your own risk.
+Be aware, that the Lilygo T-Call is a development board and NOT a certified hardware to be used in a car!
 
 Enjoy!

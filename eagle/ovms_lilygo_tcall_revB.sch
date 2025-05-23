@@ -21925,7 +21925,7 @@ Source: coiltronics_dr_series.pdf</description>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100k"/>
-<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="20k"/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="18k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="220k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
@@ -21952,18 +21952,20 @@ P9 - +12V
 
 
  </text>
-<text x="-119.38" y="-38.1" size="1.778" layer="97">LMR51610 EN thresholds
+<text x="-114.3" y="-38.1" size="1.778" layer="97">LMR51610 EN thresholds
 ON: 1.22V OFF 1.0V
 
-Choice of R3
+Choice of R3 ( V(Z1)=10V )
              Von        Voff
 100k       11.8V     11.5V
 120k       11.9V     11.6V
 150k       12.0V     11.7V
 
-Values depend on the actual 
-Zener voltage (nominal 10V) at 
-low current (6µA). </text>
+Values depend on the actual Zener voltage (nominal 10V) at 
+low current (6µA). 
+
+For a different Z1 voltage: R3=((Von-V(Z1))/1.2V - 1)*R11
+Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 </plain>
 <instances>
 <instance part="LILYGO" gate="G$1" x="-50.8" y="109.22" smashed="yes" rot="R90">
