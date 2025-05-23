@@ -67,7 +67,7 @@ Limitations
 
 Assembly related hints
 ----------------------
-The Lilygo module can in principle be soldered by using the provided pin headers. The board has to be mounted with the Simcom modem on the top side.
+The Lilygo module can in principle be soldered directly to the board by using the provided pin headers. The board has to be mounted with the Simcom modem on the top side.
 Using a precision socket and corresponding pin headers, the module can easliy be removed again, but should be secured by non conducting screws.
  
 The DC-DC converter output voltage is defined by R8 and R9. The reference voltage is 0.8V, so with R8=100k and R9=18k, the output voltage is about 5.2V.
@@ -99,6 +99,5 @@ This requires to solder an USB cable to the corresponding pins on the Lilygo boa
 Disclaimer
 ==========
 This design is provided as is. Use at your own risk.
-Be aware, that the Lilygo T-Call is a development board and NOT a certified hardware to be used in a car!
 
 Enjoy!
