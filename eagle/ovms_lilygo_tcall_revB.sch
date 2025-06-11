@@ -515,15 +515,15 @@ manufactured by NKL®</description>
 <text x="33.02" y="22.86" size="1.27" layer="95">&gt;NAME</text>
 <text x="35.56" y="-17.78" size="1.27" layer="95">&gt;VALUE</text>
 </symbol>
-<symbol name="SN6523X">
+<symbol name="TCAN330">
 <wire x1="-5.08" y1="2.44" x2="12.7" y2="2.44" width="0.254" layer="94"/>
 <wire x1="12.7" y1="2.44" x2="12.7" y2="-10.26" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-10.26" x2="-5.08" y2="-10.26" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="-10.26" x2="-5.08" y2="2.44" width="0.254" layer="94"/>
 <text x="-5.08" y="3.71" size="1.778" layer="95">&gt;NAME</text>
 <text x="-5.08" y="-12.8" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="LBK" x="-7.62" y="0" length="short" direction="in"/>
-<pin name="RS" x="-7.62" y="-7.62" length="short" direction="in"/>
+<pin name="SHDN" x="-7.62" y="0" length="short" direction="in"/>
+<pin name="S" x="-7.62" y="-7.62" length="short" direction="in"/>
 <pin name="CANH" x="-7.62" y="-5.08" length="short" direction="in"/>
 <pin name="CANL" x="-7.62" y="-2.54" length="short" direction="in"/>
 <pin name="RXD" x="15.24" y="0" length="short" direction="in" rot="R180"/>
@@ -679,9 +679,9 @@ manufactured by NKL®</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SN65HVD23X" prefix="IC">
+<deviceset name="TCAN330DR" prefix="IC">
 <gates>
-<gate name="G$1" symbol="SN6523X" x="-2.54" y="2.54"/>
+<gate name="G$1" symbol="TCAN330" x="-5.08" y="2.54"/>
 </gates>
 <devices>
 <device name="D" package="DIL8">
@@ -689,9 +689,9 @@ manufactured by NKL®</description>
 <connect gate="G$1" pin="CANH" pad="7"/>
 <connect gate="G$1" pin="CANL" pad="6"/>
 <connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="LBK" pad="5"/>
-<connect gate="G$1" pin="RS" pad="8"/>
 <connect gate="G$1" pin="RXD" pad="4"/>
+<connect gate="G$1" pin="S" pad="8"/>
+<connect gate="G$1" pin="SHDN" pad="5"/>
 <connect gate="G$1" pin="TXD" pad="1"/>
 <connect gate="G$1" pin="VCC" pad="3"/>
 </connects>
@@ -704,9 +704,9 @@ manufactured by NKL®</description>
 <connect gate="G$1" pin="CANH" pad="7"/>
 <connect gate="G$1" pin="CANL" pad="6"/>
 <connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="LBK" pad="5"/>
-<connect gate="G$1" pin="RS" pad="8"/>
 <connect gate="G$1" pin="RXD" pad="4"/>
+<connect gate="G$1" pin="S" pad="8"/>
+<connect gate="G$1" pin="SHDN" pad="5"/>
 <connect gate="G$1" pin="TXD" pad="1"/>
 <connect gate="G$1" pin="VCC" pad="3"/>
 </connects>
@@ -21886,8 +21886,8 @@ Source: coiltronics_dr_series.pdf</description>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="22u"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100n"/>
-<part name="IC2" library="ovms_lilygo" deviceset="SN65HVD23X" device="S" value="SN65HVD233"/>
-<part name="IC3" library="ovms_lilygo" deviceset="SN65HVD23X" device="S" value="SN65HVD233"/>
+<part name="IC2" library="ovms_lilygo" deviceset="TCAN330DR" device="S" value="TCAN330DR"/>
+<part name="IC3" library="ovms_lilygo" deviceset="TCAN330DR" device="S" value="TCAN330DR"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VDD3V3"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
@@ -21978,8 +21978,8 @@ Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 <instance part="GND7" gate="1" x="-147.32" y="0" smashed="yes">
 <attribute name="VALUE" x="-149.86" y="-2.54" size="1.778" layer="96"/>
 </instance>
-<instance part="GND1" gate="1" x="-157.48" y="40.64" smashed="yes">
-<attribute name="VALUE" x="-160.02" y="38.1" size="1.778" layer="96"/>
+<instance part="GND1" gate="1" x="-157.48" y="45.72" smashed="yes">
+<attribute name="VALUE" x="-160.02" y="43.18" size="1.778" layer="96"/>
 </instance>
 <instance part="EXT_12V" gate="-1" x="-248.92" y="10.16" smashed="yes">
 <attribute name="VIN" x="-246.38" y="7.62" size="1.778" layer="96"/>
@@ -22040,7 +22040,7 @@ Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 <attribute name="VALUE" x="-184.658" y="69.85" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+2" gate="VCC" x="-180.34" y="81.28" smashed="yes">
-<attribute name="VALUE" x="-182.88" y="78.74" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-180.34" y="83.82" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND8" gate="1" x="-147.32" y="73.66" smashed="yes">
 <attribute name="VALUE" x="-149.86" y="71.12" size="1.778" layer="96"/>
@@ -22215,7 +22215,7 @@ Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 <segment>
 <wire x1="-170.18" y1="53.34" x2="-157.48" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="-157.48" y1="43.18" x2="-157.48" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-157.48" y1="48.26" x2="-157.48" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
@@ -22538,7 +22538,7 @@ Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="RS"/>
+<pinref part="IC3" gate="G$1" pin="S"/>
 <wire x1="-195.58" y1="91.44" x2="-198.12" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="-198.12" y1="91.44" x2="-198.12" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="-198.12" y1="68.58" x2="-172.72" y2="68.58" width="0.1524" layer="91"/>
@@ -22745,7 +22745,7 @@ Example: Von=11.8V, V(Z1)=9V -&gt; R3=300k, Voff=11.4V </text>
 </net>
 <net name="N$15" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="RS"/>
+<pinref part="IC2" gate="G$1" pin="S"/>
 <wire x1="-193.04" y1="50.8" x2="-195.58" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="-195.58" y1="50.8" x2="-195.58" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-195.58" y1="66.04" x2="-187.96" y2="66.04" width="0.1524" layer="91"/>
