@@ -765,6 +765,22 @@ manufactured by NKL®</description>
 <text x="-5.08" y="7.62" size="1.778" layer="95">&gt;NAME</text>
 <text x="-5.08" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="TCAN330">
+<wire x1="-5.08" y1="2.44" x2="12.7" y2="2.44" width="0.254" layer="94"/>
+<wire x1="12.7" y1="2.44" x2="12.7" y2="-10.26" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-10.26" x2="-5.08" y2="-10.26" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-10.26" x2="-5.08" y2="2.44" width="0.254" layer="94"/>
+<text x="-5.08" y="3.71" size="1.778" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-12.8" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="SHDN" x="-7.62" y="0" length="short" direction="in"/>
+<pin name="S" x="-7.62" y="-7.62" length="short" direction="in"/>
+<pin name="CANH" x="-7.62" y="-5.08" length="short" direction="in"/>
+<pin name="CANL" x="-7.62" y="-2.54" length="short" direction="in"/>
+<pin name="RXD" x="15.24" y="0" length="short" direction="in" rot="R180"/>
+<pin name="TXD" x="15.24" y="-7.62" visible="pin" length="short" rot="R180"/>
+<pin name="VCC" x="15.24" y="-2.54" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="GND" x="15.24" y="-5.08" visible="pin" length="short" direction="pwr" rot="R180"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="LILYGO-T-CALL-A7670E_1.0">
@@ -1182,6 +1198,43 @@ Source: http://www.farnell.com/datasheets/716597.pdf</description>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:30993/1"/>
 </package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TCAN330DR" prefix="IC">
+<gates>
+<gate name="G$1" symbol="TCAN330" x="-5.08" y="2.54"/>
+</gates>
+<devices>
+<device name="D" package="DIL8">
+<connects>
+<connect gate="G$1" pin="CANH" pad="7"/>
+<connect gate="G$1" pin="CANL" pad="6"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="RXD" pad="4"/>
+<connect gate="G$1" pin="S" pad="8"/>
+<connect gate="G$1" pin="SHDN" pad="5"/>
+<connect gate="G$1" pin="TXD" pad="1"/>
+<connect gate="G$1" pin="VCC" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="S" package="SO-08">
+<connects>
+<connect gate="G$1" pin="CANH" pad="7"/>
+<connect gate="G$1" pin="CANL" pad="6"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="RXD" pad="4"/>
+<connect gate="G$1" pin="S" pad="8"/>
+<connect gate="G$1" pin="SHDN" pad="5"/>
+<connect gate="G$1" pin="TXD" pad="1"/>
+<connect gate="G$1" pin="VCC" pad="3"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
