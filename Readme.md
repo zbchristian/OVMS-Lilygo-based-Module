@@ -68,13 +68,23 @@ Limitations
 Firmware
 --------
 Except for the above mentioned limitation, the module is compatible with the standard OVMS firmware, BUT the pinout requires a remapping of the ESP32 pins.
-This is implemented in the [forked OVMS repository](https://github.com/zbchristian/Open-Vehicle-Monitoring-System-3-Lilygo-Support) in the branch `lilygo-GPIO-remapping`. 
+This is implemented in the [OVMS repository](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3). 
 - Follow the standard OVMS documentation to clone the above repository, install the required additional packages and install the required Espressif IDF
-- Switch to branch `lilygo-GPIO-remapping`
 - In the folder `./vehicle/OVMS.V3` copy `support/sdkconfig.lilygo_tc` to `sdkconfig` and `support/partition4M.csv` to `partition4M.csv`
-- Run `make menuconfig` and select in the OVMS submenu the hardware version 3.1 and in the GPIO remapping menu, the T-Call board version. This remaps the ESP32 GPIO according to the version.  
+- Run `make menuconfig` and go to `Component config -> Opene Vehicle Monitoring System (OVMS) -> Hardware support`.
+  - Hardware Version should be 3.1
+  - Enable GPIO remapping under `Choose GPIO Mapping`
+  - Now a new menu entry appears in `Hardware support` called `File with GPIO mapping`
+	- For the above `sdkconfig`, the default file is `lilygo_tc_v11.h`. This works for the Rev B motherboard and Lilygo T-Call V1.1. The file is located in the folder `components/gpio_maps`.
 - Be sure, that the following OVMS components are disabled: MAX7317, external SWCAN, Over-The-Air update, SD card
+- Disable the support for all cars except for the one you are interested in. This is required to meet the limited space in the Fash memory for the firmware
+  - For the default `partitions4M.csv`, the available space for the firmware is `0x2f0000 = 2.94MB`
 - Follow the standard documentation to compile and flash the firmware via USB
+- Alternative GPIO mapping files are available and can be placed in the folder [`components/gpio_maps`](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3/tree/master/vehicle/OVMS.V3/components/gpio_maps). 
+  A Readme is available describing the signal names and how to prepare a mapping file. Each mapping file (should) contains the information for which hardware its suitable.
+- The above limitation for the firmware size can be lifted, by using a modified partition table (`partitions4M_full.csv`) from this repository
+  - This reduces the `FAT` partition, the storage for the OVMS configuration, from `1MB` to `512kB`, which might cause problems in your setup!
+  
 
 Known Issues
 ------------
