@@ -8,6 +8,8 @@ The Lilygo T-Call modules provide most of the hardware required for an OVMS modu
 - ext 5V powering possible via pin
 - Price is around 35€ + tax
 
+**This module supports only 2 CAN buses. This might limit the suitability for your car!**
+
 OVMS Requirements
 ----------------- 
 - Connection to OBD-II connector
@@ -92,14 +94,15 @@ This is implemented in the [OVMS repository](https://github.com/openvehicles/Ope
 	- For the above `sdkconfig`, the default file is `lilygo_tc_v11.h`. This is valid for the Rev B motherboard and a Lilygo A7670E T-Call V1.1
 	- The GPIO mappings files are located in the folder `components/gpio_maps`
 - Be sure, that the following OVMS components are disabled: MAX7317, external SWCAN, Over-The-Air update, SD card
-- Disable the support for all cars except for the one you are interested in. This is required to meet the limited space in the Flash memory for the firmware
+- Disable the support for all cars (`vehicle support`) except for the one you are interested in. This is required to meet the limited space in the Flash memory for the firmware
   - For the default `partitions4M.csv`, the available space for the firmware is `0x2f0000 = 2.94MB`. The full firmware requires about 3.4MB.
+  - **The support for the *Nissan Leaf* and *Renault Twizzy* should always be disabled, since these require the MAX7317 support.**  
 - Follow the standard documentation to compile and flash the firmware via USB
 - Alternative GPIO mapping files are available and can be placed in the folder [`components/gpio_maps`](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3/tree/master/vehicle/OVMS.V3/components/gpio_maps). 
   - A Readme is available describing the signal names and how to prepare a mapping file. Each mapping file (should) contains the information for which hardware its suitable.
 - The above limitation for the firmware size can be lifted, by using a modified partition table ([`partitions4M_full.csv`](https://github.com/zbchristian/OVMS-Lilygo-based-Module/blob/master/partitions4M_full.csv)) from this repository
   - This reduces the `FAT` partition, the storage for the OVMS configuration, from `1MB` to `512kB`, which might cause problems in your setup!
-  
+
 
 Known Issues
 ------------
