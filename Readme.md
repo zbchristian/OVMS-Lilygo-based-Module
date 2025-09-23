@@ -95,13 +95,20 @@ This is implemented in the [OVMS repository](https://github.com/openvehicles/Ope
 	- The GPIO mappings files are located in the folder `components/gpio_maps`
 - Be sure, that the following OVMS components are disabled: MAX7317, external SWCAN, Over-The-Air update, SD card
 - Disable the support for all cars (`vehicle support`) except for the one you are interested in. This is required to meet the limited space in the Flash memory for the firmware
-  - For the default `partitions4M.csv`, the available space for the firmware is `0x2f0000 = 2.94MB`. The full firmware requires about 3.4MB.
-  - **The support for the *Nissan Leaf* and *Renault Twizzy* should always be disabled, since these require the MAX7317 support.**  
+  - For the default `partitions4M.csv`, the available space for the firmware is `0x2f0000 = 2.94MB`. The full firmware requires about 3.5MB.
+  - **The support for the *Nissan Leaf* and *Renault Twizzy* should always be disabled, since these do not compile without the MAX7317 support.**  
+  - Check the size of the firmware: `ls -la build/ovms3.bin`
 - Follow the standard documentation to compile and flash the firmware via USB
-- Alternative GPIO mapping files are available and can be placed in the folder [`components/gpio_maps`](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3/tree/master/vehicle/OVMS.V3/components/gpio_maps). 
-  - A Readme is available describing the signal names and how to prepare a mapping file. Each mapping file (should) contains the information for which hardware its suitable.
-- The above limitation for the firmware size can be lifted, by using a modified partition table ([`partitions4M_full.csv`](https://github.com/zbchristian/OVMS-Lilygo-based-Module/blob/master/partitions4M_full.csv)) from this repository
+- If the flash process is failing due to a too large firmware, you need to disable some additional cars under `Vehicle support`. 
+- The above limitation for the firmware size can be reduced, by using a modified partition table ([`partitions4M_full.csv`](partitions4M_full.csv)) from this repository
   - This reduces the `FAT` partition, the storage for the OVMS configuration, from `1MB` to `512kB`, which might cause problems in your setup!
+  - In this case the available space for the firmware is `0x370000 = 3604480B = 3.44MB`
+
+Alternative GPIO mapping
+-------
+Alternative GPIO mapping files are available and can be placed in the folder [`components/gpio_maps`](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3/tree/master/vehicle/OVMS.V3/components/gpio_maps). 
+
+Check the [Readme](https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3/tree/master/vehicle/OVMS.V3/components/gpio_maps) for details about the naming of the GPIO pins and the format of the mapping files.
 
 
 Known Issues
